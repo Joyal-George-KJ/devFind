@@ -38,11 +38,13 @@ const useTheme = () => {
         }
     };
 
-  useEffect(() => {
-    document.documentElement.className = theme;
-  }, [theme]);
+    useEffect(() => {
+        // on component mount call the toggle function without toggle true prop it will initialize the theme and sets it 
+        toggleTheme();
+        setMount(true);
+    }, []);
 
-  return { theme, toogleTheme };
+    return [mount, theme, toggleTheme];
 };
 
 export default useTheme;
