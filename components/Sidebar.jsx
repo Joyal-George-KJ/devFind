@@ -4,25 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCode, faMoon, faSun } from "@fortawesome/free-solid-svg-icons";
 
 function Sidebar() {
-  const [theme, setTheme] = useState("dark");
-
-  useEffect(() => {
-    const savedTheme =
-      typeof window !== "undefined" ? localStorage.getItem("theme") : "dark";
-    if (savedTheme) {
-      setTheme(savedTheme);
-      document.documentElement.classList.toggle("dark", savedTheme === "dark");
-    }
-  }, []);
-
-  function toggleTheme() {
-    const newTheme = theme === "dark" ? "light" : "dark";
-    setTheme(newTheme);
-    if (typeof window !== "undefined") {
-      localStorage.setItem("theme", newTheme);
-    }
-    document.documentElement.classList.toggle("dark", newTheme === "dark");
-  }
+  const [mount, theme, toggleTheme] = useTheme();
 
   return (
     <div className="my-7 w-full border-r-2 border-borderSecondary px-7 dark:border-borderColor md:h-[90vh] md:w-[23%] md:px-2 lg:px-7">
