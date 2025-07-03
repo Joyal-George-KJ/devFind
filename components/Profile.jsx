@@ -35,7 +35,7 @@ function Card({ data }) {
           <img
             src={imageSrc}
             alt="User logo"
-            onError={() => setImageSrc('/defaultAvatar.png')}
+            onError={() => setImageSrc('/defaultAvatar.webp')}
             className="h-full w-full rounded-full"
           />
         </div>
