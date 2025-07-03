@@ -24,10 +24,8 @@ function Sidebar() {
             className="h-10 w-10 cursor-pointer rounded-lg border-2 border-borderSecondary bg-white transition-all hover:border-textSecondary hover:text-textSecondary dark:border-borderColor dark:bg-textPrimary dark:text-white dark:hover:border-textSecondary dark:hover:text-textSecondary"
             onClick={toggleTheme}
           >
-            {theme === "dark" ? (
-              <FontAwesomeIcon icon={faMoon} fontSize="1rem" />
-            ) : (
-              <FontAwesomeIcon icon={faSun} fontSize="1rem" />
+            {mount && (
+              <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} fontSize="1rem" />
             )}
           </button>
         </div>
