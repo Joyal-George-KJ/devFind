@@ -22,7 +22,7 @@ function Sidebar() {
           <button
             type="button"
             className="h-10 w-10 cursor-pointer rounded-lg border-2 border-borderSecondary bg-white transition-all hover:border-textSecondary hover:text-textSecondary dark:border-borderColor dark:bg-textPrimary dark:text-white dark:hover:border-textSecondary dark:hover:text-textSecondary"
-            onClick={toggleTheme}
+            onClick={() => toggleTheme(theme, true)}
           >
             {mount && (
               <FontAwesomeIcon icon={theme === "dark" ? faMoon : faSun} fontSize="1rem" />
