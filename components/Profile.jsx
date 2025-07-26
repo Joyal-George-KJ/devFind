@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { FaXTwitter, FaLocationDot } from "react-icons/fa6";
 
@@ -9,6 +9,10 @@ function Profile({ data }) {
 function Card({ data }) {
   const cardRef = React.useRef();
   const [imageSrc, setImageSrc] = useState(data.avatar);
+
+  useEffect(() => {
+    setImageSrc(data.avatar);
+  }, [data])
 
   const handleWheel = (event) => {
     event.stopPropagation();
